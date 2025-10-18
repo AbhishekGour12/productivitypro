@@ -20,5 +20,6 @@ export default {
         },
       },
     },
+    'postcss-preset-env': {},
   },
 }
