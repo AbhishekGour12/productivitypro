@@ -1,114 +1,80 @@
+
+
 /* Using @layer base to inject styles before Tailwind's utilities */
 @layer base {
+  :root {
+    --color-primary: 109 40 217;
+    --color-primary-dark: 91 33 182;
+    --color-background: 248 249 250;
+    --color-card: 255 255 255;
+    --color-text-primary: 31 41 55;
+    --color-text-secondary: 107 114 128;
+    --color-success: 16 185 129;
+    --color-danger: 239 68 68;
+    --color-danger-dark: 220 38 38;
+    --color-warning: 245 158 11;
+    --color-warning-dark: 217 119 6;
+    --color-border: 229 231 235;
 
-    /* ==========================================================================
-    CSS Custom Properties (Variables) for Theming
-    ==========================================================================
-    This is the central place to manage your app's design tokens.
-    Update these values to change the theme across the entire website.
-  */
-    :root {
-        /* Color Palette */
-        --color-primary: 109 40 217;
-        /* #6D28D9 */
-        --color-primary-dark: 91 33 182;
-        /* #5B21B6 */
-        --color-background: 248 249 250;
-        /* #F8F9FA */
-        --color-card: 255 255 255;
-        /* #FFFFFF */
-        --color-text-primary: 31 41 55;
-        /* #1F2937 */
-        --color-text-secondary: 107 114 128;
-        /* #6B7280 */
-        --color-success: 16 185 129;
-        /* #10B981 */
-        --color-danger: 239 68 68;
-        /* #EF4444 */
-        --color-danger-dark: 220 38 38;
-        /* #DC2626 */
-        --color-warning: 245 158 11;
-        /* #F59E0B */
-        --color-warning-dark: 217 119 6;
-        /* #D97706 */
-        --color-border: 229 231 235;
-        /* #E5E7EB */
+    --font-sans: var(--font-geist-sans);
+    --border-radius: 0.75rem;
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+                 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
 
-        /* Font Variables */
-        --font-sans: var(--font-geist-sans);
+  body {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-text-primary));
+    font-family: var(--font-sans);
+  }
 
-        /* Other Variables */
-        --border-radius: 0.75rem;
-        /* 12px */
-        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    }
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    color: white;
+    transition: background-color 0.3s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
 
-    /* ==========================================================================
-    Global Base Styles
-    ==========================================================================
-  */
-    body {
-        background-color: rgb(var(--color-background));
-        color: rgb(var(--color-text-primary));
-        font-family: var(--font-sans);
-    }
+  .btn:active {
+    transform: scale(0.98);
+  }
 
-    /*
-    ==========================================================================
-    Global Button Styles
-    ==========================================================================
-    This ensures all buttons are consistent and fixes the text visibility issue.
-  */
-    .btn {
-        padding: 0.5rem 1rem;
-        border-radius: var(--border-radius);
-        font-weight: 700;
-        color: white;
-        /* Default button text color is white */
-        transition: background-color 0.3s, transform 0.1s;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        cursor: pointer;
-    }
+  .btn-primary {
+    background-color: rgb(var(--color-primary));
+  }
 
-    .btn:active {
-        transform: scale(0.98);
-    }
+  .btn-primary:hover {
+    background-color: rgb(var(--color-primary-dark));
+  }
 
-    .btn-primary {
-        background-color: rgb(var(--color-primary));
-    }
+  .btn-danger {
+    background-color: rgb(var(--color-danger));
+  }
 
-    .btn-primary:hover {
-        background-color: rgb(var(--color-primary-dark));
-    }
+  .btn-danger:hover {
+    background-color: rgb(var(--color-danger-dark));
+  }
 
-    .btn-danger {
-        background-color: rgb(var(--color-danger));
-    }
+  .btn-warning {
+    background-color: rgb(var(--color-warning));
+  }
 
-    .btn-danger:hover {
-        background-color: rgb(var(--color-danger-dark));
-    }
+  .btn-warning:hover {
+    background-color: rgb(var(--color-warning-dark));
+  }
 
-    .btn-warning {
-        background-color: rgb(var(--color-warning));
-    }
+  .btn-secondary {
+    background-color: rgb(var(--color-border));
+    color: rgb(var(--color-text-primary));
+  }
 
-    .btn-warning:hover {
-        background-color: rgb(var(--color-warning-dark));
-    }
-
-    .btn-secondary {
-        background-color: rgb(var(--color-border));
-        color: rgb(var(--color-text-primary));
-        /* Secondary buttons have dark text */
-    }
-
-    .btn-secondary:hover {
-        background-color: #d1d5db;
-        /* A slightly darker gray */
-    }
+  .btn-secondary:hover {
+    background-color: #d1d5db;
+  }
 }

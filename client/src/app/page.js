@@ -12,6 +12,7 @@ import { FiShield } from 'react-icons/fi';
 import { authAPI } from './lib/auth';
 import api from './lib/api';
 
+
 export default function Home() {
   const [formData, setFormData] = useState({
     email: '',
